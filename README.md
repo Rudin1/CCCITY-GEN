@@ -1,2 +1,6 @@
-# ALGORITHMIC-ART-CITY
-Gity park generation
+# ALGORITHMIC-CITY-GENERATION
+
+City park generation
+
+
+

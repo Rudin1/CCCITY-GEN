@@ -300,7 +300,7 @@ Result of buildings (notice buidlings shapes on the edges):
 
 # FUTURE WORK:
 
-One possible Futrue work is applying these algorithm (and more) to generate very large cities,literally with thousands of buildings, adding new features like terrains (consideration of ground elevation), new algorithms to generate buildings and more. for example generating city based on the following simple map sketch:
+One possible futrue work is applying these algorithms (and more) to generate very large cities,literally with thousands of buildings, adding new features like terrains (consideration of ground elevation), new algorithms to generate buildings and more. for example generating city based on the following simple sketch:
 
 
 ![p1](https://user-images.githubusercontent.com/95120906/232600426-9d502bdb-854e-4f63-9a1b-11cd62686973.png)

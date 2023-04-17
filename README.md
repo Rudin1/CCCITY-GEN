@@ -41,14 +41,14 @@ By manipulating each geometry, by its size edges (relative scale), scale z,y,x a
 ## level 1: GRAPH MAP GENERATION:
  
  ### 1) GENERATE MAP:
-- there are multiple ways to generate a graph, one good algorithm is first we initiate a "moving particle" with certain properties (for example speed, chance of spliting into a new paths...), the particle begins to "randomly walk" (with constrains and set of directions), which in the end creates organic city map.
+- There are multiple ways to generate a graph, one good algorithm is first we initiate a "moving particle" with certain properties (for example speed, chance of spliting into a new paths...), the particle begins to "randomly walk" (with constrains and set of directions), which in the end creates organic city map.
 basic example of the idea:
 
 **** gif particle
 
 
 
-## for this article, i use basic algorithm to create the graph - spliting lines in rectangle shape:
+## For this article, i use basic algorithm to create the graph - spliting lines in rectangle shape:
 EX1:
 
 ![b2](https://user-images.githubusercontent.com/95120906/232340980-f7e387b6-9e65-46ba-a8b3-e2dcc6d59bd1.png)
@@ -152,14 +152,14 @@ EX: BASIS MAP:
 
 
 ### - BUILDINGS.
-each building is a graph by its own. we can manipulating the shape of the graph to give it any shape. 
+Each building is a graph by its own. we can manipulating the shape of the graph to give it any shape. 
 - spliting the builing area into parts, by lines. each polygon we create has its own features:
 1. height, type of windows, height of floors, number of floors and so on... for example if we split the given area:
 
 
 ![bl3](https://user-images.githubusercontent.com/95120906/232342513-6409dfbd-cc57-4274-9c27-74717bdb27a6.png)
 
-each polygon created inside the red area, is part of a building or ground (we can recursivly split it again and again).
+Each polygon created inside the red area, is part of a building or ground (we can recursivly split it again and again).
 
 ### - PUBLIC SPACES
 1. split area into parts.
@@ -174,47 +174,121 @@ each polygon created inside the red area, is part of a building or ground (we ca
 
 
 
-### IMPORTANT ALGORITHMS TO MENTION USED IN THE CODE:
+# IMPORTANT ALGORITHMS TO MENTION USED IN THE CODE:
 
-1. PERLIN NOISE (https://en.wikipedia.org/wiki/Perlin_noise)
-2. SIMPLFY GRAPH (USUALLY USED TO TWIST BUILINGS WALLS AND CORRECT VERY CLOSED/OVERLAPPING ROADS)
+# 1. PERLIN NOISE (https://en.wikipedia.org/wiki/Perlin_noise)
+# 2. SIMPLFY GRAPH (USUALLY USED TO TWIST BUILINGS WALLS AND CORRECT VERY CLOSED/OVERLAPPING ROADS)
 
 EX:
 ![SIMPLEGRAPH](https://user-images.githubusercontent.com/95120906/232521446-4de5f507-516c-4143-946e-5bddcb7be7a1.png)
 
-3. BUILDING BLOCK INSTANCE, TO GENERATE ANY OBJECT (EACH OBJECT COMPOSED OF MULTIPLE PARTS OF INSTANCES) 
+# 3. BUILDING BLOCK INSTANCE, TO GENERATE ANY OBJECT (EACH OBJECT COMPOSED OF MULTIPLE PARTS OF INSTANCES) 
 EX:
-VEHCILE TYPE OF 'PICKUP' HAS INSTANCE PARTS:
-1. 4 WHEELS 
-2. BOTTOM BODY
-3. TOP BODY
-4. WINDOWS
-5. ADDITIONS
 
-4. FIND INTERSESCTION:
- - FINDING INTERSETIONS OF 2 LINES.
+Vehcile type of 'pickup' has instace parts:
+1. 4 wheels 
+2. nottom body
+3. top body
+4. windows
+5. additions
 
-5. FINDING POLYGONS (OR AREAS) IN UNDIRECTED GRAPH:
-- WITH DFS VARIATION:
-	1) PICK UNVISITED NODE IN GRAPH
+
+# 4. FIND INTERSESCTION:
+ - finding intersection of 2 lines
+
+
+
+# 5. FINDING POLYGONS (OR AREAS) IN UNDIRECTED GRAPH:
+another way to look at undirected graph is its bassicly bi-directional graph.
+keeping that in mind, the algorithm with DFS variation:
+
+	1) PICK UNVISITED NODE IN GRAPH.
 	
 	WHILE NODE HAS UNVISITED ADJACENT:
+	
 		2) GET UNVISITED ADJACENT NODE WITH THE SMALLEST ANGLE TO THE RIGHT.
+		
 		3) REPEAT STEPS 1,2 UNTIL WE REACH VISITED NODE OR REACH NO PATH.
+		
 		4) RETURN ON THE PATH, IF WE REACHED VISITED NODE, DELETED THE DIRECTION OF PATH WHILE GOING BACK (DELETING CURRENT ADJACENT NODE ALONG THE PATH)
+		
 	
 	REPEATE UNTIL WE CANNOT LOOP FURTHER
 	
 EX:
 
+NOTE:
 
-6.
+green == directed edge.
+
+red == undirected edge.
+
+blue == unvisited edge.
+
+
+![Q1](https://user-images.githubusercontent.com/95120906/232560991-33dd11c1-df11-4908-a2f7-63155192bb8e.png)
+![Q2](https://user-images.githubusercontent.com/95120906/232561009-6faf86ba-7ca6-410c-ad90-d8a2a0e5a8f6.png)
+![Q3](https://user-images.githubusercontent.com/95120906/232561031-275c9790-259a-448b-8e29-783b14fdfbf5.png)
+
+'A' starting point.
+
+figure (1): on node 'A', there are 2 options to go: B or F.
+The angle DA to AB (in green) is smaller than DA to AF.
+--> choose path to AB.
+
+from figure (2) to figure (5), repeat same logic.
+figure (5) reached original starting point. save polygon path.
+
+from figure (6) to figure (10), go back on the path while changing graph undirected edges to directed
+(by deleting path direction). 
+
+figure (11). repeat steps on direction of AF.
 	
 	
 
 
 
+# 6. AVOID OVERLAPPING OBJECTS:
 
+Avoid overlapping while creating objects (for example in traffic vehicles).
+- there are several ways to check if there is a collision. i chose "grid memozation" using hash map:
+	similar to Quadtree, but it based on areas relative in the original map.
+
+
+# 7. MORPHING:
+Used to generate pedestrians relative to motion simulation
+
+# 8. EXPANDING AREA.
+
+Used to generate organic shapes like lakes or find the internal shape of very complex shape (2d or 3D):
+
+The algorithm:
+1. pick random point inside shape.
+2. expand it in all directions until there is no space left to expand to.
+
+EX:
+
+![AREA_FIND](https://user-images.githubusercontent.com/95120906/232572223-8998eabb-39d5-4755-abdf-cda2e9d0c18a.png)
+
+
+
+# 9. BUILDING SHAPES:
+One way i use to shape buildings is the following:
+1. chop building area by shapes or lines, and find centroids of the polygons that been created.
+2. apply mask frame on the area.
+3. each shape inside mask has its feautres. for example type of building, colors, window types , height, height floor, window size...
+4. for each centroid, create part of building according to the features of mask frame shapes (2), which are inside in the spesific shapes.
+
+For example:
+
+
+![biuldings_algo](https://user-images.githubusercontent.com/95120906/232579454-e2c05ce2-7c18-4f1c-8d78-70b772374700.png)
+
+NOTE: every shape with the same color inside mask frame, will get the same features.
+
+Result of buildings (notice buidlings shapes on the edges):
+
+![QmXYJCoHqprkgvQQK7zpX4o6HvzeXTbdnLXaXVcgg15iSn](https://user-images.githubusercontent.com/95120906/232580384-95ce6f5f-59c7-4557-b4ce-688158f16713.jpg)
 
 
 

@@ -30,7 +30,7 @@ basic example of the idea:
 
 
 
-## For this article, i use basic algorithm to create the graph - spliting lines in rectangle shape:
+## For this article, i use basic algorithm to create the graph - splitting lines vertically and horizontally:
 EX1:
 
 ![b2](https://user-images.githubusercontent.com/95120906/232340980-f7e387b6-9e65-46ba-a8b3-e2dcc6d59bd1.png)
@@ -135,7 +135,7 @@ EX: BASIS MAP:
 
 ### - BUILDINGS.
 Each building is a graph by its own. we can manipulating the shape of the graph to give it any shape. 
-- spliting the builing area into parts, by lines. each polygon we create has its own features:
+- splitting the builing area into parts, by lines. each polygon we create has its own features:
 1. height, type of windows, height of floors, number of floors and so on... for example if we split the given area:
 
 

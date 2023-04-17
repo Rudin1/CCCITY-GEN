@@ -160,7 +160,7 @@ Each polygon created inside the red area, is part of a building or ground (we ca
 
 
 
-# IMPORTANT ALGORITHMS TO MENTION, USED IN THE CODE:
+# IMPORTANT ALGORITHMS USED IN THE CODE:
 
 
 

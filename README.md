@@ -4,7 +4,6 @@
 
 
 # ALGORITHMIC-CITY-GENERATION
-- This is sub project of a larger project of city generation
 
 
 ## SIMPLIFIED FLOW CHART OF CITY GENERATION

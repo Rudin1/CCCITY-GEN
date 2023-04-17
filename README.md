@@ -1,5 +1,7 @@
 
-*** LICENSE: CC BY-NC-ND 
+LICENSE: CC BY-NC-ND 
+MADE BY RUDIN ASHMOZ
+
 
 # ALGORITHMIC-CITY-GENERATION
 - This is sub project of a larger project of city generation

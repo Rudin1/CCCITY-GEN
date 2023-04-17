@@ -77,7 +77,7 @@ From graph edges --> generate roads.
 
 SIMLPLE EXAMPLES TO CLARIFY: 
 
-# EXAMPLE TYPE INTERSECTIONS
+### EXAMPLE TYPE INTERSECTIONS
 
 ![TYPES](https://user-images.githubusercontent.com/95120906/232514595-235a08fd-46fd-4727-8d69-538c6c2757fe.png)
 
@@ -89,7 +89,7 @@ SIMLPLE EXAMPLES TO CLARIFY:
 ![RA2](https://user-images.githubusercontent.com/95120906/232491760-e224dcfb-4cb4-43d6-9543-f7688e77c09c.png)
 
 
-###CONNECT DIFFRENT ROAD SIZES (LANES):
+### CONNECT DIFFRENT ROAD SIZES (LANES):
 
 ![connect_dif_lanes](https://user-images.githubusercontent.com/95120906/232492045-67ffcbea-6724-4f36-8c1f-900371e4beb0.png)
 
@@ -297,6 +297,17 @@ NOTE: every shape with the same color inside mask frame, will get the same featu
 Result of buildings (notice buidlings shapes on the edges):
 
 ![QmXYJCoHqprkgvQQK7zpX4o6HvzeXTbdnLXaXVcgg15iSn](https://user-images.githubusercontent.com/95120906/232580384-95ce6f5f-59c7-4557-b4ce-688158f16713.jpg)
+
+# FUTURE WORK:
+
+One possible Futrue work is applying these algorithm (and more) to generate very large cities,literally with thousands of buildings, adding new features like terrains (consideration of ground elevation), new algorithms to generate buildings and more. for example generating city based on the following simple map sketch:
+
+
+![p1](https://user-images.githubusercontent.com/95120906/232600426-9d502bdb-854e-4f63-9a1b-11cd62686973.png)
+
+
+
+
 
 
 

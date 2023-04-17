@@ -258,8 +258,7 @@ figure (11). repeat steps on direction of AF.
 
 
 Avoid overlapping while creating objects (for example in traffic vehicles).
-- there are several ways to check if there is a collision. i chose "grid memozation" using hash map:
-	similar to Quadtree, but it based on areas relative in the original map.
+- there are several ways to check if there is a collision. i chose "grid memozation" using hash map, similar to Quadtree.
 
 
 ### 7. MORPHING:

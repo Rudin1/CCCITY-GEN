@@ -205,7 +205,7 @@ Vehcile type of 'pickup' has instace parts:
 
 
 ### 5. FINDING POLYGONS (OR AREAS) IN UNDIRECTED GRAPH:
-another way to look at undirected graph is its bassicly bi-directional graph.
+another way to look at undirected graph is its basically bi-directional graph.
 keeping that in mind, the algorithm with DFS variation:
 
 	1) PICK UNVISITED NODE IN GRAPH.

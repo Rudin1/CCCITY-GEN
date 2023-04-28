@@ -5,7 +5,7 @@
 
 # ALGORITHMIC-CITY-GENERATION
 
-This article is about my project which generates very detailed random cities, using THREE.JS.
+
 
 ## SIMPLIFIED FLOW CHART OF CITY GENERATION
 

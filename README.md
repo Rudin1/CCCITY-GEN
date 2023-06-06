@@ -134,7 +134,7 @@ EX: BASIS MAP:
 
 
 ### - BUILDINGS.
-Each building is a graph by its own. we can manipulating the shape of the graph to give it any shape. 
+ Each building is a graph by its own. we can manipulating the shape of the graph to give it any shape. 
 - splitting the builing area into parts, by lines. each polygon we create has its own features:
 1. height, type of windows, height of floors, number of floors and so on... for example if we split the given area:
 

@@ -298,23 +298,3 @@ Result of buildings (notice buidlings shapes on the edges):
 
 ![QmXYJCoHqprkgvQQK7zpX4o6HvzeXTbdnLXaXVcgg15iSn](https://user-images.githubusercontent.com/95120906/232580384-95ce6f5f-59c7-4557-b4ce-688158f16713.jpg)
 
-# FUTURE WORK:
-
-One possible futrue work is applying these algorithms (and more) to generate very large cities,literally with thousands of buildings, adding new features like terrains (consideration of ground elevation), new algorithms to generate buildings and more. for example generating city based on the following simple sketch:
-
-
-![p1](https://user-images.githubusercontent.com/95120906/232600426-9d502bdb-854e-4f63-9a1b-11cd62686973.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
